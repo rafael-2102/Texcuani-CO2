@@ -3,295 +3,916 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Texcuani & CO - Emprendimiento Social</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-        }
-
-        /* Header */
-        header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 2rem 0;
-            text-align: center;
-        }
-
-        .logo h1 {
-            font-size: 6%;
-            margin-bottom: 0.5rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
-        }
-
-        .logo p {
-            font-size: 1.2rem;
-            opacity: 0.9;
-        }
-
-        /* Navigation */
-        nav {
-            background: #4a5568;
-            padding: 1rem 0;
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 2rem;
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-
-        nav a:hover {
-            color: #a0aec0;
-        }
-
-        /* Sections */
-        .section {
-            padding: 4rem 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            color: #2d3748;
-        }
-
-        /* About Section */
-        .about {
-            background: #f7fafc;
-        }
-
-        .about-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            align-items: center;
-        }
-
-        .about-text h2 {
-            color: #667eea;
-            margin-bottom: 1rem;
-        }
-
-        .about-text p {
-            font-size: 1.1rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .about-image {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            height: 300px;
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 3rem;
-        }
-
-        /* Services Section */
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .service-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            text-align: center;
-            transition: transform 0.3s;
-        }
-
-        .service-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .service-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-
-        .service-card h3 {
-            color: #667eea;
-            margin-bottom: 1rem;
-        }
-
-        /* Contact Section */
-        .contact {
-            background: #2d3748;
-            color: white;
-        }
-
-        .contact-form {
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 500;
-        }
-
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 0.75rem;
-            border: none;
-            border-radius: 5px;
-            font-size: 1rem;
-        }
-
-        .form-group textarea {
-            height: 150px;
-            resize: vertical;
-        }
-
-        .btn {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 1rem 2rem;
-            border: none;
-            border-radius: 5px;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: opacity 0.3s;
-        }
-
-        .btn:hover {
-            opacity: 0.9;
-        }
-
-        /* Footer */
-        footer {
-            background: #1a202c;
-            color: white;
-            text-align: center;
-            padding: 2rem;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .about-content {
-                grid-template-columns: 1fr;
-            }
-
-            .logo h1 {
-                font-size: 2rem;
-            }
-
-            nav ul {
-                gap: 1rem;
-            }
-        }
-    </style>
+    <title>Texcuani & CO | Comida Mexicana Colombiana Saludable</title>
+    <meta name="description" content="Fusión gastronómica mexicana con productos colombianos. Delicioso y saludable para diabéticos, deportistas y estudiantes. Come mejor sin preocuparte.">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Header -->
-    <header>
-        <div class="logo">
-            <h1>Texcuani & CO</h1>
-            <p>Emprendimiento con Propósito</p>
-        </div>
+    <!-- HEADER & NAV -->
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-container">
+                <a href="#inicio" class="nav-logo">
+                    <span class="logo-text">Texcuani</span>
+                    <span class="logo-sub">&CO</span>
+                </a>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="#inicio" class="nav-link">Inicio</a></li>
+                    <li><a href="#nosotros" class="nav-link">Nosotros</a></li>
+                    <li><a href="#publico" class="nav-link">Para ti</a></li>
+                    <li><a href="#productos" class="nav-link">Platos</a></li>
+                    <li><a href="#beneficios" class="nav-link">Beneficios</a></li>
+                    <li><a href="#contacto" class="nav-link">Contacto</a></li>
+                </ul>
+                <div class="nav-actions">
+                    <button class="nav-user" id="navUserBtn" title="Mi cuenta">
+                        <span class="nav-user-icon">👤</span>
+                        <span class="nav-user-text" id="navUserText">Ingresar</span>
+                    </button>
+                    <button class="cart-btn" id="cartBtn" aria-label="Abrir carrito">
+                        <span class="cart-icon">🛒</span>
+                        <span class="cart-count" id="cartCount">0</span>
+                    </button>
+                    <button class="nav-toggle" id="navToggle" aria-label="Abrir menú">
+                        <span></span><span></span><span></span>
+                    </button>
+                </div>
+            </div>
+        </nav>
     </header>
 
-    <!-- Navigation -->
-    <nav>
-        <ul>
-            <li><a href="#inicio">Inicio</a></li>
-            <li><a href="#nosotros">Nosotros</a></li>
-            <li><a href="#servicios">Servicios</a></li>
-            <li><a href="#contacto">Contacto</a></li>
-        </ul>
-    </nav>
+    <!-- HERO -->
+    <section id="inicio" class="hero">
+        <div class="hero-pattern"></div>
+        <div class="hero-content">
+            <div class="hero-logo">
+                <img src="https://coresg-normal.trae.ai/api/ide/v1/text_to_image?prompt=Mexican%20Colombian%20fusion%20food%20logo%20with%20cactus%2C%20taco%2C%20arepa%2C%20guacamole%2C%20flags%20of%20Mexico%20and%20Colombia%2C%20illustration%20style%20warm%20colors&image_size=square_hd" alt="Texcuani & CO Logo" class="hero-logo-img">
+            </div>
+            <h1 class="hero-title">
+                <span class="title-green">Tex</span><span class="title-red">cuani</span>
+                <span class="title-co">&CO</span>
+            </h1>
+            <p class="hero-slogan">come mejor sin preocuparte</p>
+            <p class="hero-subtitle">
+                Fusión gastronómica <strong>mexicana</strong> <span class="flag-mx">🇲🇽</span> con sabores <strong>colombianos</strong> <span class="flag-co">🇨🇴</span>,
+                pensada para quienes aman lo rico y cuidan su salud.
+            </p>
+            <div class="hero-buttons">
+                <a href="#productos" class="btn btn-primary">Ver platos</a>
+                <a href="#productos" class="btn btn-secondary">Pedir ya</a>
+            </div>
+        </div>
+        <div class="hero-scroll">
+            <span>↓ Desplaza y arma tu pedido</span>
+        </div>
+    </section>
 
-    <!-- About Section -->
+    <!-- NOSOTROS -->
     <section id="nosotros" class="section about">
-        <h2 class="section-title">¿Quiénes Somos?</h2>
-        <div class="about-content">
-            <div class="about-text">
-                <h2>Nuestra Misión</h2>
-                <p>Texcuani & CO es un emprendimiento que busca ayudar a las personas a través de soluciones innovadoras y humanas.</p>
-                <p>Nos dedicamos a crear productos y servicios que generen un impacto positivo en la sociedad, combinando creatividad, calidad y responsabilidad social.</p>
-                <p>Creemos en el poder de la colaboración y en que cada acción puede marcar la diferencia en la vida de los demás.</p>
-            </div>
-            <div class="about-image">
-                💜
+        <div class="container">
+            <h2 class="section-title">¿Quiénes <span class="accent-red">somos</span>?</h2>
+            <div class="about-grid">
+                <div class="about-text">
+                    <h3 class="about-subtitle">Dos culturas, una pasión por lo saludable</h3>
+                    <p>
+                        En <strong>Texcuani & CO</strong> unimos lo mejor de la gastronomía mexicana y colombiana
+                        para crear platos únicos que sorprenden tu paladar <em>sin poner en riesgo tu bienestar</em>.
+                    </p>
+                    <p>
+                        Trabajamos con <strong>productos colombianos de primera</strong> (plátano, yuca, ají,
+                        arepas, frijoles) y recetas mexicanas tradicionales, adaptándolas con métodos
+                        de cocción bajos en grasa, sin azúcares refinados y con alto valor nutricional.
+                    </p>
+                    <div class="about-tags">
+                        <span class="tag tag-green">100% Natural</span>
+                        <span class="tag tag-yellow">Sin azúcar refinada</span>
+                        <span class="tag tag-red">Bajo en grasa</span>
+                        <span class="tag tag-blue">Alto en proteína</span>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <div class="image-frame">
+                        <div class="flag-stripes">
+                            <span class="stripe mx-green"></span>
+                            <span class="stripe mx-white"></span>
+                            <span class="stripe mx-red"></span>
+                            <span class="stripe co-yellow"></span>
+                            <span class="stripe co-blue"></span>
+                            <span class="stripe co-red"></span>
+                        </div>
+                        <div class="fusion-emoji">🌮 + 🧀 + 🍌 = ❤️</div>
+                        <p class="fusion-text">México encuentra a Colombia en cada bocado</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Services Section -->
-    <section id="servicios" class="section">
-        <h2 class="section-title">Nuestros Servicios</h2>
-        <div class="services-grid">
-            <div class="service-card">
-                <div class="service-icon">🎯</div>
-                <h3>Asesoramiento</h3>
-                <p>Orientación personalizada para alcanzar tus objetivos y mejorar tu calidad de vida.</p>
-            </div>
-            <div class="service-card">
-                <div class="service-icon">🛠️</div>
-                <h3>Soluciones Prácticas</h3>
-                <p>Herramientas y métodos efectivos para resolver desafíos cotidianos.</p>
-            </div>
-            <div class="service-card">
-                <div class="service-icon">🤝</div>
-                <h3>Comunidad</h3>
-                <p>Espacio de apoyo y colaboración entre personas con valores compartidos.</p>
+    <!-- PÚBLICO OBJETIVO -->
+    <section id="publico" class="section audience">
+        <div class="container">
+            <h2 class="section-title">Hecho <span class="accent-green">para ti</span></h2>
+            <p class="section-subtitle">
+                Diseñamos nuestros platos pensando en personas que necesitan energía,
+                controlar su azúcar o simplemente comer rico sin remordimientos.
+            </p>
+            <div class="audience-grid">
+                <div class="audience-card card-diabetic">
+                    <div class="audience-icon">🩸</div>
+                    <h3>Para diabéticos</h3>
+                    <ul>
+                        <li>Bajo índice glicémico</li>
+                        <li>Sin azúcares refinados</li>
+                        <li>Harinas integrales</li>
+                        <li>Endulzantes naturales (stevia, monk fruit)</li>
+                        <li>Información nutricional detallada</li>
+                    </ul>
+                </div>
+                <div class="audience-card card-athlete">
+                    <div class="audience-icon">🏋️</div>
+                    <h3>Para deportistas</h3>
+                    <ul>
+                        <li>Alto contenido proteico</li>
+                        <li>Carbohidratos complejos</li>
+                        <li>Granos integrales y legumbres</li>
+                        <li>Electrolitos naturales</li>
+                        <li>Platos post-entreno y pre-entreno</li>
+                    </ul>
+                </div>
+                <div class="audience-card card-student">
+                    <div class="audience-icon">📚</div>
+                    <h3>Para estudiantes</h3>
+                    <ul>
+                        <li>Porciones abundantes</li>
+                        <li>Precios accesibles</li>
+                        <li>Combo diario económico</li>
+                        <li>Energía para estudiar todo el día</li>
+                        <li>Pide rápido, recibe más rápido</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
+    <!-- PRODUCTOS / PLATOS -->
+    <section id="productos" class="section products">
+        <div class="container">
+            <h2 class="section-title">Arma <span class="accent-yellow">tu pedido</span></h2>
+            <p class="section-subtitle">Ajusta la cantidad con los botones <strong>+</strong> y <strong>−</strong>, luego agrega al carrito. 💚❤️💛💙</p>
+
+            <div class="products-grid">
+                <article class="product-card" data-id="p1" data-nombre="Tacos Colombianikos" data-precio="18500">
+                    <div class="product-img product-img-1">🌮</div>
+                    <h3>Tacos Colombianikos</h3>
+                    <p>Tacos de maíz integral con carne sazonada, guacamole, plátano maduro asado y queso campesino.</p>
+                    <div class="product-meta">
+                        <span class="meta-tag meta-proteina">28g proteína</span>
+                        <span class="meta-tag meta-calorias">340 kcal</span>
+                    </div>
+                    <div class="product-footer">
+                        <div class="product-price">$18.500</div>
+                        <div class="qty-row">
+                            <button class="qty-btn qty-minus" aria-label="Quitar">−</button>
+                            <span class="qty-value">0</span>
+                            <button class="qty-btn qty-plus" aria-label="Agregar">+</button>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary btn-block btn-add">Agregar al carrito</button>
+                </article>
+
+                <article class="product-card" data-id="p2" data-nombre="Arepa Azteca Bowl" data-precio="16900">
+                    <div class="product-img product-img-2">🥙</div>
+                    <h3>Arepa Azteca Bowl</h3>
+                    <p>Arepa de choclo integral desmenuzada, frijoles negros, aguacate, pico de gallo y crema de aguacate.</p>
+                    <div class="product-meta">
+                        <span class="meta-tag meta-proteina">22g proteína</span>
+                        <span class="meta-tag meta-calorias">390 kcal</span>
+                    </div>
+                    <div class="product-footer">
+                        <div class="product-price">$16.900</div>
+                        <div class="qty-row">
+                            <button class="qty-btn qty-minus" aria-label="Quitar">−</button>
+                            <span class="qty-value">0</span>
+                            <button class="qty-btn qty-plus" aria-label="Agregar">+</button>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary btn-block btn-add">Agregar al carrito</button>
+                </article>
+
+                <article class="product-card" data-id="p3" data-nombre="Mole Paisa Ligero" data-precio="21000">
+                    <div class="product-img product-img-3">🍲</div>
+                    <h3>Mole Paisa Ligero</h3>
+                    <p>Fusión de mole mexicano con bandeja paisa saludable: lentejas, frijoles, chicharrón de yuca al horno.</p>
+                    <div class="product-meta">
+                        <span class="meta-tag meta-proteina">31g proteína</span>
+                        <span class="meta-tag meta-calorias">410 kcal</span>
+                    </div>
+                    <div class="product-footer">
+                        <div class="product-price">$21.000</div>
+                        <div class="qty-row">
+                            <button class="qty-btn qty-minus" aria-label="Quitar">−</button>
+                            <span class="qty-value">0</span>
+                            <button class="qty-btn qty-plus" aria-label="Agregar">+</button>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary btn-block btn-add">Agregar al carrito</button>
+                </article>
+
+                <article class="product-card" data-id="p4" data-nombre="Enfrijolada Costeña" data-precio="15500">
+                    <div class="product-img product-img-4">🥑</div>
+                    <h3>Enfrijolada Costeña</h3>
+                    <p>Tortilla integral bañada en frijol cremoso estilo costeño, queso descremado y salsa verde al ají.</p>
+                    <div class="product-meta">
+                        <span class="meta-tag meta-proteina">19g proteína</span>
+                        <span class="meta-tag meta-calorias">320 kcal</span>
+                    </div>
+                    <div class="product-footer">
+                        <div class="product-price">$15.500</div>
+                        <div class="qty-row">
+                            <button class="qty-btn qty-minus" aria-label="Quitar">−</button>
+                            <span class="qty-value">0</span>
+                            <button class="qty-btn qty-plus" aria-label="Agregar">+</button>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary btn-block btn-add">Agregar al carrito</button>
+                </article>
+
+                <article class="product-card" data-id="p5" data-nombre="Chiles Rellenos & Plátano" data-precio="19800">
+                    <div class="product-img product-img-5">🍌</div>
+                    <h3>Chiles Rellenos & Plátano</h3>
+                    <p>Chiles poblanos rellenos de atún colombiano o frijol, acompañados de plátano asado y ensalada.</p>
+                    <div class="product-meta">
+                        <span class="meta-tag meta-proteina">26g proteína</span>
+                        <span class="meta-tag meta-calorias">360 kcal</span>
+                    </div>
+                    <div class="product-footer">
+                        <div class="product-price">$19.800</div>
+                        <div class="qty-row">
+                            <button class="qty-btn qty-minus" aria-label="Quitar">−</button>
+                            <span class="qty-value">0</span>
+                            <button class="qty-btn qty-plus" aria-label="Agregar">+</button>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary btn-block btn-add">Agregar al carrito</button>
+                </article>
+
+                <article class="product-card" data-id="p6" data-nombre="Agua Fresca de Lulo & Limón" data-precio="6500">
+                    <div class="product-img product-img-6">🍹</div>
+                    <h3>Agua Fresca de Lulo & Limón</h3>
+                    <p>Bebida hidratante con lulo colombiano, endulzada con stevia. Sin azúcar, 100% natural.</p>
+                    <div class="product-meta">
+                        <span class="meta-tag meta-proteina">0g azúcar</span>
+                        <span class="meta-tag meta-calorias">25 kcal</span>
+                    </div>
+                    <div class="product-footer">
+                        <div class="product-price">$6.500</div>
+                        <div class="qty-row">
+                            <button class="qty-btn qty-minus" aria-label="Quitar">−</button>
+                            <span class="qty-value">0</span>
+                            <button class="qty-btn qty-plus" aria-label="Agregar">+</button>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary btn-block btn-add">Agregar al carrito</button>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- BENEFICIOS -->
+    <section id="beneficios" class="section benefits">
+        <div class="container">
+            <h2 class="section-title">¿Por qué <span class="accent-blue">Texcuani & CO</span>?</h2>
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <div class="benefit-icon">🌱</div>
+                    <h4>Ingredientes reales</h4>
+                    <p>Productos colombianos frescos, sin conservantes ni colorantes artificiales.</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">📊</div>
+                    <h4>Info nutricional clara</h4>
+                    <p>Cada plato muestra calorías, proteínas, carbohidratos y grasas. Sin sorpresas.</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">💪</div>
+                    <h4>Sabor + Nutrición</h4>
+                    <p>No tienes que escoger. Disfrutas de fusión mexicano-colombiana bien hecha.</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">⏱️</div>
+                    <h4>Listo en minutos</h4>
+                    <p>Pedidos rápidos para almuerzos de trabajo, estudio o después del gym.</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">💰</div>
+                    <h4>Precios justos</h4>
+                    <p>Comer saludable no es un lujo. Combos especiales para estudiantes.</p>
+                </div>
+                <div class="benefit-item">
+                    <div class="benefit-icon">💚</div>
+                    <h4>Amigable contigo</h4>
+                    <p>Apto para diabéticos, deportistas, vegetarianos y veganos (consultar carta).</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIOS -->
+    <section class="section testimonials">
+        <div class="container">
+            <h2 class="section-title">Lo que dicen <span class="accent-red">nuestros clientes</span></h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"Soy diabético tipo 2 y creí que nunca más volvería a comer un taco rico. Texcuani me demostró que se puede comer increíble sin azúcar."</p>
+                    <div class="testimonial-author">
+                        <div class="avatar">👨‍🦱</div>
+                        <div>
+                            <strong>Carlos Ramírez</strong>
+                            <span>Cliente desde 2025 · Diabético</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"Entreno 5 días a la semana y son mi almuerzo post-gym favorito. Proteína alta, grasas buenas y sabor 10/10. ¡Me encanta el Mole Paisa!"</p>
+                    <div class="testimonial-author">
+                        <div class="avatar">💪</div>
+                        <div>
+                            <strong>Laura González</strong>
+                            <span>Atleta amateur · Deportista</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"Estudiante de medicina con horario de locura. Los combos estudiantiles me salvan el día: baratos, abundantes y no me dan sueña después de almorzar."</p>
+                    <div class="testimonial-author">
+                        <div class="avatar">👩‍🎓</div>
+                        <div>
+                            <strong>Valentina Pineda</strong>
+                            <span>Universidad Nacional · Estudiante</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACTO -->
     <section id="contacto" class="section contact">
-        <h2 class="section-title">¡Contáctanos!</h2>
-        <form class="contact-form">
-            <div class="form-group">
-                <label for="nombre">Nombre</label>
-                <input type="text" id="nombre" name="nombre" required>
+        <div class="container">
+            <h2 class="section-title">Encuentra <span class="accent-green">tu punto</span></h2>
+            <p class="section-subtitle">Pide por este sitio, WhatsApp o visítanos en nuestra sede. 🇲🇽🇨🇴</p>
+
+            <div class="contact-grid">
+                <div class="contact-info large">
+                    <h3>Encuéntranos aquí</h3>
+                    <div class="info-item">
+                        <span class="info-icon">📍</span>
+                        <div>
+                            <strong>Dirección</strong>
+                            <p>Calle 72 #10-45, Local 3 · Chapinero, Bogotá</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-icon">📞</span>
+                        <div>
+                            <strong>WhatsApp</strong>
+                            <p>+57 300 123 45 67</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-icon">📷</span>
+                        <div>
+                            <strong>Instagram</strong>
+                            <p>@texcuani.co</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-icon">🕒</span>
+                        <div>
+                            <strong>Horarios</strong>
+                            <p>Lun - Sáb: 11:00am - 8:00pm</p>
+                            <p>Dom: 12:00pm - 6:00pm</p>
+                        </div>
+                    </div>
+                    <div class="social-buttons">
+                        <a href="#" class="social-btn wa">WhatsApp</a>
+                        <a href="#" class="social-btn ig">Instagram</a>
+                    </div>
+                </div>
+
+                <form class="contact-form">
+                    <h3>¿Tienes dudas?</h3>
+                    <div class="form-group">
+                        <label for="nombre">Nombre completo</label>
+                        <input type="text" id="nombre" name="nombre" placeholder="¿Cómo te llamamos?" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="telefono">WhatsApp / Teléfono</label>
+                        <input type="tel" id="telefono" name="telefono" placeholder="Para contactarte de vuelta" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="mensaje">Tu mensaje</label>
+                        <textarea id="mensaje" name="mensaje" rows="4" placeholder="¿En qué podemos ayudarte?" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Enviar mensaje</button>
+                </form>
             </div>
-            <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" required>
-            </div>
-            <div class="form-group">
-                <label for="mensaje">Mensaje</label>
-                <textarea id="mensaje" name="mensaje" required></textarea>
-            </div>
-            <button type="submit" class="btn">Enviar Mensaje</button>
-        </form>
+        </div>
     </section>
 
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2026 Texcuani & CO. Todos los derechos reservados.</p>
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h3 class="footer-logo">
+                        <span class="logo-text">Texcuani</span>
+                        <span class="logo-sub">&CO</span>
+                    </h3>
+                    <p class="footer-slogan">come mejor sin preocuparte</p>
+                    <p>Fusión gastronómica mexicana con corazón colombiano y compromiso con tu salud.</p>
+                </div>
+                <div>
+                    <h4>Enlaces</h4>
+                    <ul class="footer-links">
+                        <li><a href="#inicio">Inicio</a></li>
+                        <li><a href="#nosotros">Nosotros</a></li>
+                        <li><a href="#productos">Platos</a></li>
+                        <li><a href="#contacto">Contacto</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Comunidad</h4>
+                    <ul class="footer-links">
+                        <li><a href="#publico">Para diabéticos</a></li>
+                        <li><a href="#publico">Para deportistas</a></li>
+                        <li><a href="#publico">Para estudiantes</a></li>
+                        <li><a href="#beneficios">Beneficios</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 Texcuani & CO. Todos los derechos reservados. Hecho con ❤️ en México 🇲🇽 & Colombia 🇨🇴</p>
+            </div>
+        </div>
     </footer>
+
+    <!-- ============== MODAL AUTENTICACIÓN ============== -->
+    <div class="modal-overlay" id="authModal" aria-hidden="true">
+        <div class="modal auth-modal">
+            <button class="modal-close" data-close="authModal" aria-label="Cerrar">×</button>
+
+            <div class="auth-header">
+                <div class="auth-logo">
+                    <span class="logo-text" style="font-size:1.6rem">Texcuani</span>
+                    <span class="logo-sub" style="color:var(--brown-soft)">&CO</span>
+                </div>
+                <h3 id="authTitle">Bienvenido</h3>
+                <p id="authSubtitle">Para hacer tu pedido, inicia sesión o crea una cuenta con tu correo.</p>
+            </div>
+
+            <!-- Tabs -->
+            <div class="auth-tabs">
+                <button class="auth-tab active" data-tab="login">Iniciar sesión</button>
+                <button class="auth-tab" data-tab="register">Registrarme</button>
+            </div>
+
+            <!-- Form Login -->
+            <form class="auth-form" id="loginForm">
+                <div class="form-group">
+                    <label for="loginEmail">Correo electrónico</label>
+                    <input type="email" id="loginEmail" placeholder="tu@correo.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="loginPass">Contraseña</label>
+                    <input type="password" id="loginPass" placeholder="Mínimo 6 caracteres" minlength="6" required>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Ingresar</button>
+                <p class="auth-note">🔒 Tus datos se guardan solo en tu navegador (demo).</p>
+            </form>
+
+            <!-- Form Registro -->
+            <form class="auth-form hidden" id="registerForm">
+                <div class="form-group">
+                    <label for="regName">Nombre completo</label>
+                    <input type="text" id="regName" placeholder="¿Cómo te llamamos?" required>
+                </div>
+                <div class="form-group">
+                    <label for="regEmail">Correo electrónico</label>
+                    <input type="email" id="regEmail" placeholder="tu@correo.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="regPass">Contraseña</label>
+                    <input type="password" id="regPass" placeholder="Mínimo 6 caracteres" minlength="6" required>
+                </div>
+                <div class="form-group">
+                    <label for="regPerfil">¿Quién eres?</label>
+                    <select id="regPerfil">
+                        <option value="diabetico">Soy diabético/a</option>
+                        <option value="deportista">Soy deportista</option>
+                        <option value="estudiante">Soy estudiante</option>
+                        <option value="otro">Me encanta lo rico y saludable</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-secondary btn-block">Crear cuenta</button>
+                <p class="auth-note">Al registrarte aceptas recibir novedades de Texcuani & CO.</p>
+            </form>
+        </div>
+    </div>
+
+    <!-- ============== CARRITO (DRAWER) ============== -->
+    <div class="cart-overlay" id="cartOverlay" aria-hidden="true"></div>
+    <aside class="cart-drawer" id="cartDrawer">
+        <div class="cart-header">
+            <h3>🛒 Tu pedido</h3>
+            <button class="modal-close" data-close="cartDrawer" aria-label="Cerrar">×</button>
+        </div>
+
+        <div class="cart-body" id="cartBody">
+            <div class="cart-empty" id="cartEmpty">
+                <div class="cart-empty-icon">🌮</div>
+                <h4>Todavía no has agregado nada</h4>
+                <p>Ve a la sección de platos y elige tu favorito.</p>
+                <a href="#productos" class="btn btn-primary" data-close-link>Ver platos</a>
+            </div>
+            <div class="cart-items" id="cartItems"></div>
+        </div>
+
+        <div class="cart-footer">
+            <div class="cart-summary" id="cartSummary" hidden>
+                <div class="summary-row">
+                    <span>Subtotal</span>
+                    <span id="subtotal">$0</span>
+                </div>
+                <div class="summary-row">
+                    <span>Domicilio</span>
+                    <span id="domicilio">$3.000</span>
+                </div>
+                <div class="summary-row total">
+                    <strong>Total</strong>
+                    <strong id="total">$3.000</strong>
+                </div>
+            </div>
+            <button class="btn btn-primary btn-block" id="checkoutBtn" disabled>
+                Finalizar pedido
+            </button>
+            <p class="cart-hint" id="cartHint">⚠️ Debes iniciar sesión para confirmar tu pedido.</p>
+        </div>
+    </aside>
+
+    <!-- ============== MODAL CHECKOUT ÉXITO ============== -->
+    <div class="modal-overlay" id="successModal" aria-hidden="true">
+        <div class="modal success-modal">
+            <button class="modal-close" data-close="successModal" aria-label="Cerrar">×</button>
+            <div class="success-icon">✅</div>
+            <h3>¡Pedido confirmado, <span id="successUser">amigo</span>!</h3>
+            <p>Tu pedido está en camino. Gracias por preferir Texcuani & CO 🇲🇽❤️🇨🇴</p>
+            <div class="success-summary" id="successSummary"></div>
+            <p class="success-cta">Te enviaremos una confirmación a tu correo.</p>
+            <button class="btn btn-primary btn-block" data-close="successModal">Cerrar</button>
+        </div>
+    </div>
+
+    <!-- ============== TOAST ============== -->
+    <div class="toast" id="toast"></div>
+
+    <script>
+        // ===========================================================
+        //  TEXCUANI & CO — Carrito + Autenticación (vanilla JS)
+        // ===========================================================
+
+        // ---------- Utilidades ----------
+        const $ = (s, ctx=document) => ctx.querySelector(s);
+        const $$ = (s, ctx=document) => [...ctx.querySelectorAll(s)];
+        const fmt = n => '$' + new Intl.NumberFormat('es-CO').format(n);
+        const emailRx = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        const toast = (msg, type='ok') => {
+            const t = $('#toast');
+            t.textContent = msg;
+            t.className = `toast show toast-${type}`;
+            setTimeout(() => t.classList.remove('show'), 2600);
+        };
+
+        // ---------- Menú móvil ----------
+        const toggle = $('#navToggle');
+        const menu = $('#navMenu');
+        toggle.addEventListener('click', () => {
+            menu.classList.toggle('active');
+            toggle.classList.toggle('active');
+        });
+        $$('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.remove('active');
+                toggle.classList.remove('active');
+            });
+        });
+
+        // Smooth scroll
+        $$('a[href^="#"]').forEach(a => {
+            a.addEventListener('click', e => {
+                const href = a.getAttribute('href');
+                if (href === '#') return;
+                e.preventDefault();
+                const t = $(href);
+                if (t) t.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            });
+        });
+
+        // Formulario contacto
+        const contactForm = $('.contact-form');
+        if (contactForm) {
+            contactForm.addEventListener('submit', e => {
+                e.preventDefault();
+                toast('¡Mensaje enviado! Te responderemos pronto 🇲🇽🇨🇴');
+                e.target.reset();
+            });
+        }
+
+        // ---------- Sistema de modales ----------
+        $$('[data-close]').forEach(btn => {
+            btn.addEventListener('click', () => closeModal(btn.dataset.close));
+        });
+        $$('[data-close-link]').forEach(btn => {
+            btn.addEventListener('click', () => closeCart());
+        });
+        $('.cart-overlay').addEventListener('click', closeCart);
+
+        function openModal(id){
+            const m = $('#' + id);
+            m.classList.add('show');
+            m.setAttribute('aria-hidden', 'false');
+            document.body.style.overflow = 'hidden';
+        }
+        function closeModal(id){
+            const m = $('#' + id);
+            if (id === 'cartDrawer') return closeCart();
+            m.classList.remove('show');
+            m.setAttribute('aria-hidden', 'true');
+            if (!$('.modal-overlay.show')) document.body.style.overflow = '';
+        }
+        function openCart(){
+            $('#cartOverlay').classList.add('show');
+            $('#cartDrawer').classList.add('open');
+            document.body.style.overflow = 'hidden';
+        }
+        function closeCart(){
+            $('#cartOverlay').classList.remove('show');
+            $('#cartDrawer').classList.remove('open');
+            if (!$('.modal-overlay.show')) document.body.style.overflow = '';
+        }
+
+        // ---------- Autenticación (localStorage) ----------
+        const USERS_KEY = 'texcuani_users';
+        const SESSION_KEY = 'texcuani_session';
+        let currentUser = JSON.parse(localStorage.getItem(SESSION_KEY) || 'null');
+
+        function getUsers(){
+            try { return JSON.parse(localStorage.getItem(USERS_KEY) || '[]'); }
+            catch { return []; }
+        }
+        function saveUsers(u){ localStorage.setItem(USERS_KEY, JSON.stringify(u)); }
+        function updateUserUI(){
+            const t = $('#navUserText');
+            if (currentUser){
+                t.textContent = currentUser.nombre.split(' ')[0] + ' 👋';
+                $('#navUserBtn').title = `Cerrar sesión de ${currentUser.email}`;
+                $('#cartHint').hidden = true;
+                $('#checkoutBtn').disabled = false;
+            } else {
+                t.textContent = 'Ingresar';
+                $('#navUserBtn').title = 'Iniciar sesión / Registrarse';
+                $('#cartHint').hidden = false;
+                $('#checkoutBtn').disabled = true;
+            }
+        }
+        updateUserUI();
+
+        // Tabs Auth
+        $$('.auth-tab').forEach(tab => {
+            tab.addEventListener('click', () => {
+                $$('.auth-tab').forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+                const isLogin = tab.dataset.tab === 'login';
+                $('#loginForm').classList.toggle('hidden', !isLogin);
+                $('#registerForm').classList.toggle('hidden', isLogin);
+            });
+        });
+
+        // Registro
+        $('#registerForm').addEventListener('submit', e => {
+            e.preventDefault();
+            const nombre = $('#regName').value.trim();
+            const email  = $('#regEmail').value.trim().toLowerCase();
+            const pass   = $('#regPass').value;
+            const perfil = $('#regPerfil').value;
+
+            if (!emailRx.test(email)) return toast('Ingresa un correo válido', 'err');
+
+            const users = getUsers();
+            if (users.find(u => u.email === email)){
+                return toast('Ese correo ya está registrado', 'err');
+            }
+            const user = { nombre, email, pass, perfil, creado: Date.now() };
+            users.push(user);
+            saveUsers(users);
+            currentUser = { nombre, email, perfil };
+            localStorage.setItem(SESSION_KEY, JSON.stringify(currentUser));
+            toast('¡Cuenta creada! Bienvenido/a ' + nombre.split(' ')[0]);
+            updateUserUI();
+            closeModal('authModal');
+            e.target.reset();
+        });
+
+        // Login
+        $('#loginForm').addEventListener('submit', e => {
+            e.preventDefault();
+            const email = $('#loginEmail').value.trim().toLowerCase();
+            const pass  = $('#loginPass').value;
+
+            if (!emailRx.test(email)) return toast('Ingresa un correo válido', 'err');
+
+            const users = getUsers();
+            const user  = users.find(u => u.email === email && u.pass === pass);
+            if (!user){
+                return toast('Correo o contraseña incorrectos', 'err');
+            }
+            currentUser = { nombre: user.nombre, email: user.email, perfil: user.perfil };
+            localStorage.setItem(SESSION_KEY, JSON.stringify(currentUser));
+            toast('¡Hola de nuevo, ' + user.nombre.split(' ')[0] + '!');
+            updateUserUI();
+            closeModal('authModal');
+            e.target.reset();
+        });
+
+        // Logout / botón usuario
+        $('#navUserBtn').addEventListener('click', () => {
+            if (currentUser){
+                if (confirm(`¿Cerrar sesión de ${currentUser.email}?`)){
+                    currentUser = null;
+                    localStorage.removeItem(SESSION_KEY);
+                    updateUserUI();
+                    toast('Sesión cerrada');
+                }
+            } else {
+                openModal('authModal');
+            }
+        });
+
+        // ---------- Carrito ----------
+        let cart = []; // {id, nombre, precio, cantidad}
+
+        $('#cartBtn').addEventListener('click', openCart);
+
+        // Contadores + / -
+        $$('.qty-plus').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const card = btn.closest('.product-card');
+                const span = card.querySelector('.qty-value');
+                span.textContent = Math.min(99, parseInt(span.textContent) + 1);
+            });
+        });
+        $$('.qty-minus').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const card = btn.closest('.product-card');
+                const span = card.querySelector('.qty-value');
+                span.textContent = Math.max(0, parseInt(span.textContent) - 1);
+            });
+        });
+
+        // Agregar al carrito
+        $$('.btn-add').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const card  = btn.closest('.product-card');
+                const qtyEl = card.querySelector('.qty-value');
+                const qty   = parseInt(qtyEl.textContent);
+
+                if (qty <= 0) return toast('Primero elige una cantidad (+)', 'warn');
+
+                const id     = card.dataset.id;
+                const nombre = card.dataset.nombre;
+                const precio = parseInt(card.dataset.precio);
+
+                const exist = cart.find(i => i.id === id);
+                if (exist) exist.cantidad += qty;
+                else cart.push({ id, nombre, precio, cantidad: qty });
+
+                qtyEl.textContent = 0;
+                renderCart();
+                toast(`+${qty} ${nombre} agregado`);
+                // Mini feedback en el botón
+                const orig = btn.textContent;
+                btn.textContent = '✓ Agregado';
+                btn.style.background = 'linear-gradient(135deg, var(--red-mx), var(--red-mx-light))';
+                setTimeout(() => {
+                    btn.textContent = orig;
+                    btn.style.background = '';
+                }, 900);
+            });
+        });
+
+        function renderCart(){
+            const items = $('#cartItems');
+            const totalItems = cart.reduce((s,i) => s + i.cantidad, 0);
+            $('#cartCount').textContent = totalItems;
+            $('#cartCount').classList.toggle('pulse', totalItems > 0);
+
+            const subtotal = cart.reduce((s,i) => s + (i.precio * i.cantidad), 0);
+            const domicilio = cart.length ? 3000 : 0;
+            const total = subtotal + domicilio;
+
+            $('#cartEmpty').hidden = cart.length > 0;
+            $('#cartSummary').hidden = cart.length === 0;
+
+            items.innerHTML = cart.map(it => `
+                <div class="cart-item" data-id="${it.id}">
+                    <div class="cart-item-info">
+                        <div class="cart-item-name">${it.nombre}</div>
+                        <div class="cart-item-price">${fmt(it.precio)} c/u</div>
+                    </div>
+                    <div class="cart-item-actions">
+                        <div class="qty-row small">
+                            <button class="qty-btn qty-minus" data-act="minus">−</button>
+                            <span class="qty-value">${it.cantidad}</span>
+                            <button class="qty-btn qty-plus"  data-act="plus">+</button>
+                        </div>
+                        <button class="cart-item-remove" data-act="remove" title="Quitar">🗑️</button>
+                        <div class="cart-item-sub">${fmt(it.precio * it.cantidad)}</div>
+                    </div>
+                </div>
+            `).join('');
+
+            $('#subtotal').textContent  = fmt(subtotal);
+            $('#domicilio').textContent = fmt(domicilio);
+            $('#total').textContent     = fmt(total);
+
+            // Eventos internos del carrito
+            items.querySelectorAll('.cart-item').forEach(row => {
+                const id = row.dataset.id;
+                const qtyVal = row.querySelector('.qty-value');
+                row.querySelector('[data-act="plus"]').addEventListener('click', () => {
+                    const it = cart.find(x => x.id === id);
+                    it.cantidad = Math.min(99, it.cantidad + 1);
+                    qtyVal.textContent = it.cantidad;
+                    renderCart();
+                });
+                row.querySelector('[data-act="minus"]').addEventListener('click', () => {
+                    const it = cart.find(x => x.id === id);
+                    it.cantidad--;
+                    if (it.cantidad <= 0) cart = cart.filter(x => x.id !== id);
+                    renderCart();
+                });
+                row.querySelector('[data-act="remove"]').addEventListener('click', () => {
+                    const it = cart.find(x => x.id === id);
+                    toast(`Quitaste ${it.nombre}`, 'warn');
+                    cart = cart.filter(x => x.id !== id);
+                    renderCart();
+                });
+            });
+        }
+        renderCart();
+
+        // ---------- Checkout ----------
+        $('#checkoutBtn').addEventListener('click', () => {
+            if (cart.length === 0) {
+                toast('Tu carrito está vacío', 'warn');
+                return;
+            }
+            // Regla obligatoria: sin auth, no puede pedir
+            if (!currentUser){
+                toast('Inicia sesión para finalizar tu pedido', 'err');
+                openModal('authModal');
+                return;
+            }
+            const subtotal = cart.reduce((s,i) => s + (i.precio * i.cantidad), 0);
+            const total = subtotal + 3000;
+            $('#successUser').textContent = currentUser.nombre.split(' ')[0];
+            $('#successSummary').innerHTML = `
+                <div class="summary-row"><span>Platos (${cart.reduce((s,i)=>s+i.cantidad,0)})</span><span>${fmt(subtotal)}</span></div>
+                <div class="summary-row"><span>Domicilio</span><span>$3.000</span></div>
+                <div class="summary-row total"><strong>Total pagado</strong><strong>${fmt(total)}</strong></div>
+                <div class="success-order">
+                    ${cart.map(i => `• ${i.cantidad}x ${i.nombre}`).join('<br>')}
+                </div>
+            `;
+            // Limpiar pedido
+            cart = [];
+            renderCart();
+            closeCart();
+            openModal('successModal');
+        });
+
+        // Cerrar modales con ESC
+        document.addEventListener('keydown', e => {
+            if (e.key !== 'Escape') return;
+            if ($('#cartDrawer.open')) closeCart();
+            $$('.modal-overlay.show').forEach(m => {
+                m.classList.remove('show');
+                m.setAttribute('aria-hidden', 'true');
+            });
+            if (!$('.modal-overlay.show') && !$('#cartDrawer.open')) document.body.style.overflow = '';
+        });
+    </script>
 </body>
 </html>
