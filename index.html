@@ -7,9 +7,19 @@
     <meta name="description" content="Fusión gastronómica mexicana con productos colombianos. Delicioso y saludable para diabéticos, deportistas y estudiantes. Come mejor sin preocuparte.">
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <script src="js/app.js" defer></script>
+    <!-- JavaScript modularizado (se ejecuta en este orden) -->
+    <script src="js/utils.js"   defer></script>
+    <script src="js/ui.js"      defer></script>
+    <script src="js/auth.js"    defer></script>
+    <script src="js/cart.js"    defer></script>
+    <script src="js/catalog.js" defer></script>
+    <script src="js/efectos.js" defer></script>
+    <script src="js/main.js"    defer></script>
 </head>
 <body>
+    <!-- BARRA DE PROGRESO DE LECTURA -->
+    <div class="progress-bar" id="progressBar" aria-hidden="true"></div>
+
     <!-- HEADER & NAV -->
     <header class="header">
         <nav class="nav">
@@ -23,6 +33,7 @@
                     <li><a href="#nosotros" class="nav-link">Nosotros</a></li>
                     <li><a href="#publico" class="nav-link">Para ti</a></li>
                     <li><a href="#productos" class="nav-link">Platos</a></li>
+                    <li><a href="#estudiantes" class="nav-link">Estudiantes</a></li>
                     <li><a href="#beneficios" class="nav-link">Beneficios</a></li>
                     <li><a href="#contacto" class="nav-link">Contacto</a></li>
                 </ul>
@@ -46,10 +57,22 @@
     <!-- HERO -->
     <section id="inicio" class="hero">
         <div class="hero-pattern"></div>
+
+        <!-- Emojis decorativos flotantes -->
+        <div class="hero-float" aria-hidden="true">
+            <span class="float-emoji fe-1">🌮</span>
+            <span class="float-emoji fe-2">🥑</span>
+            <span class="float-emoji fe-3">🍌</span>
+            <span class="float-emoji fe-4">🌶️</span>
+            <span class="float-emoji fe-5">🫘</span>
+            <span class="float-emoji fe-6">🍹</span>
+        </div>
+
         <div class="hero-content">
             <div class="hero-logo">
                 <img src="WhatsApp Image 2026-08-29 at 11.03.29 AM.jpeg" alt="Texcuani & CO Logo" class="hero-logo-img">
             </div>
+            <span class="hero-badge">🇲🇽 Sabor mexicano · 🇨🇴 Corazón colombiano</span>
             <h1 class="hero-title">
                 <span class="title-green">Tex</span><span class="title-red">cuani</span>
                 <span class="title-co">&CO</span>
@@ -61,13 +84,55 @@
             </p>
             <div class="hero-buttons">
                 <a href="#productos" class="btn btn-primary">Ver platos</a>
-                <a href="#productos" class="btn btn-secondary">Pedir ya</a>
+                <a href="#estudiantes" class="btn btn-secondary">Soy estudiante 🎒</a>
+            </div>
+
+            <!-- Datos que se animan al aparecer -->
+            <div class="hero-stats">
+                <div class="stat">
+                    <strong><span class="stat-num" data-count="12">0</span></strong>
+                    <span>platos en la carta</span>
+                </div>
+                <div class="stat">
+                    <strong><span class="stat-num" data-count="40">0</span><small>g</small></strong>
+                    <span>de proteína por plato</span>
+                </div>
+                <div class="stat">
+                    <strong><span class="stat-num" data-count="0">0</span></strong>
+                    <span>azúcar refinada</span>
+                </div>
+                <div class="stat">
+                    <strong><span class="stat-num" data-count="35">0</span><small>min</small></strong>
+                    <span>entrega aprox.</span>
+                </div>
             </div>
         </div>
         <div class="hero-scroll">
             <span>↓ Desplaza y arma tu pedido</span>
         </div>
     </section>
+
+    <!-- CINTA ANIMADA -->
+    <div class="marquee" aria-hidden="true">
+        <div class="marquee-track">
+            <span>🌮 Fusión mexicano-colombiana</span>
+            <span>🚫 Cero azúcar refinada</span>
+            <span>💪 Alto en proteína</span>
+            <span>🎒 Combos para estudiantes</span>
+            <span>🩸 Apto para diabéticos</span>
+            <span>🇨🇴 Productos 100% colombianos</span>
+            <span>🥑 Grasas buenas</span>
+            <span>⚡ Listo en ~35 min</span>
+            <span>🌮 Fusión mexicano-colombiana</span>
+            <span>🚫 Cero azúcar refinada</span>
+            <span>💪 Alto en proteína</span>
+            <span>🎒 Combos para estudiantes</span>
+            <span>🩸 Apto para diabéticos</span>
+            <span>🇨🇴 Productos 100% colombianos</span>
+            <span>🥑 Grasas buenas</span>
+            <span>⚡ Listo en ~35 min</span>
+        </div>
+    </div>
 
     <!-- NOSOTROS -->
     <section id="nosotros" class="section about">
@@ -119,8 +184,8 @@
                 controlar su azúcar o simplemente comer rico sin remordimientos.
             </p>
             <div class="audience-grid">
-                <div class="audience-card card-diabetic">
-                    <div class="img"> </div>
+                <div class="audience-card card-diabetic" data-filtro="diabetico">
+                    <div class="audience-icon">🩸</div>
                     <h3>Para diabéticos</h3>
                     <ul>
                         <li>Bajo índice glicémico</li>
@@ -129,8 +194,9 @@
                         <li>Endulzantes naturales (stevia, monk fruit)</li>
                         <li>Información nutricional detallada</li>
                     </ul>
+                    <span class="audience-cta">Ver platos aptos →</span>
                 </div>
-                <div class="audience-card card-athlete">
+                <div class="audience-card card-athlete" data-filtro="deportista">
                     <div class="audience-icon">🏋️</div>
                     <h3>Para deportistas</h3>
                     <ul>
@@ -140,8 +206,9 @@
                         <li>Electrolitos naturales</li>
                         <li>Platos post-entreno y pre-entreno</li>
                     </ul>
+                    <span class="audience-cta">Ver platos altos en proteína →</span>
                 </div>
-                <div class="audience-card card-student">
+                <div class="audience-card card-student" data-filtro="estudiante">
                     <div class="audience-icon">📚</div>
                     <h3>Para estudiantes</h3>
                     <ul>
@@ -151,6 +218,7 @@
                         <li>Energía para estudiar todo el día</li>
                         <li>Pide rápido, recibe más rápido</li>
                     </ul>
+                    <span class="audience-cta">Ver combos económicos →</span>
                 </div>
             </div>
         </div>
@@ -162,17 +230,43 @@
             <h2 class="section-title">Arma <span class="accent-yellow">tu pedido</span></h2>
             <p class="section-subtitle">Ajusta la cantidad con los botones <strong>+</strong> y <strong>−</strong>, luego agrega al carrito. 💚❤️💛💙</p>
 
-            <div class="products-grid">
-                <article class="product-card" data-id="p1" data-nombre="Criollo Wrap" data-precio="15500">
-                    <div class="product-img product-img-1">🌮</div>
+            <!-- OFERTA DEL DÍA -->
+            <div class="oferta-dia">
+                <span class="oferta-dia__badge">🔥 Solo hoy</span>
+                <div class="oferta-dia__texto">
+                    <h3>Combo Estudiante</h3>
+                    <p>Wrap Criollo + Agua Fresca de Lulo. Muestra tu carné y ganas <strong>10% extra</strong>.</p>
+                </div>
+                <div class="oferta-dia__precio">
+                    <span class="antes">$22.000</span>
+                    <strong>$17.900</strong>
+                </div>
+                <button class="btn btn-secondary btn-add-oferta"
+                        data-id="p7" data-nombre="Combo Estudiante" data-precio="17900"
+                        data-kcal="460" data-proteina="42">Lo quiero 🎒</button>
+            </div>
+
+            <!-- FILTROS POR PERFIL -->
+            <div class="filtros" id="filtros">
+                <button class="filtro active" data-filtro="todos">✨ Todos</button>
+                <button class="filtro" data-filtro="diabetico">🩸 Para diabéticos</button>
+                <button class="filtro" data-filtro="deportista">💪 Para deportistas</button>
+                <button class="filtro" data-filtro="estudiante">🎒 Para estudiantes</button>
+            </div>
+
+            <div class="products-grid" id="productsGrid">
+                <article class="product-card" data-id="p1" data-nombre="Criollo Wrap" data-precio="15500"
+                         data-kcal="435" data-proteina="40" data-perfiles="diabetico deportista estudiante">
+                    <span class="product-badge">🔥 Más pedido</span>
+                    <div class="product-img product-img-1">🌯</div>
                     <h3>Criollo Wrap</h3>
-                    <p>Una tortilla de maíz rellena de pollo a la plancha, fríjoles, aguacate, hogao colombiano, lechuga y queso campesino.</p>
+                    <p>Una tortilla de maíz rellena de pollo a la plancha o tortas de lenteja, fríjoles, aguacate y ahogao colombiano.</p>
                     <div class="product-meta">
-                        <span class="meta-tag meta-proteina">40g proteína</span>
+                        <span class="meta-tag meta-proteina">50g proteína</span>
                         <span class="meta-tag meta-calorias">435 kcal</span>
                     </div>
                     <div class="product-footer">
-                        <div class="product-price">$15.500</div>
+                        <div class="product-price">$16.500</div>
                         <div class="qty-row">
                             <button class="qty-btn qty-minus" aria-label="Quitar">−</button>
                             <span class="qty-value">0</span>
@@ -182,16 +276,18 @@
                     <button class="btn btn-primary btn-block btn-add">Agregar al carrito</button>
                 </article>
 
-                <article class="product-card" data-id="p2" data-nombre="Tacos con Sazón" data-precio="12500">
+                <article class="product-card" data-id="p2" data-nombre="Tacos con Sazón" data-precio="12500"
+                         data-kcal="400" data-proteina="30" data-perfiles="diabetico deportista estudiante">
+                    <span class="product-badge">🔥 Más pedido</span>
                     <div class="product-img product-img-2">🥙</div>
                     <h3>Tacos con Sazón</h3>
-                    <p>Tacos de maíz con carne magra, hogao, repollo, tomate, cilantro y guacamole.</p>
+                    <p>Tacos de maíz con carne magra o tortas de lenteja, repollo, tomate, cilantro y guacamole.</p>
                     <div class="product-meta">
                         <span class="meta-tag meta-proteina">30g proteína</span>
                         <span class="meta-tag meta-calorias">400 kcal</span>
                     </div>
                     <div class="product-footer">
-                        <div class="product-price">$12.500</div>
+                        <div class="product-price">$14.500</div>
                         <div class="qty-row">
                             <button class="qty-btn qty-minus" aria-label="Quitar">−</button>
                             <span class="qty-value">0</span>
@@ -201,16 +297,17 @@
                     <button class="btn btn-primary btn-block btn-add">Agregar al carrito</button>
                 </article>
 
-                <article class="product-card" data-id="p3" data-nombre="Mole Paisa Ligero" data-precio="21000">
+                <article class="product-card" data-id="p3" data-nombre="Mole Paisa Ligero" data-precio="21000"
+                         data-kcal="410" data-proteina="31" data-perfiles="deportista">
                     <div class="product-img product-img-3">🍲</div>
-                    <h3>Mole Paisa Ligero</h3>
-                    <p>Fusión de mole mexicano con bandeja paisa saludable: lentejas, frijoles, chicharrón de yuca al horno.</p>
+                    <h3>Mole Paisa</h3>
+                    <p>mole paisa: frijol, arroz, chicharron al barril, tajada de maduro y salsa de chile (mole).</p>
                     <div class="product-meta">
-                        <span class="meta-tag meta-proteina">31g proteína</span>
-                        <span class="meta-tag meta-calorias">410 kcal</span>
+                        <span class="meta-tag meta-proteina">95g proteína</span>
+                        <span class="meta-tag meta-calorias"> 450 kcal</span>
                     </div>
                     <div class="product-footer">
-                        <div class="product-price">$21.000</div>
+                        <div class="product-price">$25.000</div>
                         <div class="qty-row">
                             <button class="qty-btn qty-minus" aria-label="Quitar">−</button>
                             <span class="qty-value">0</span>
@@ -220,12 +317,13 @@
                     <button class="btn btn-primary btn-block btn-add">Agregar al carrito</button>
                 </article>
 
-                <article class="product-card" data-id="p4" data-nombre="Enfrijolada Costeña" data-precio="15500">
+                <article class="product-card" data-id="p4" data-nombre="Enfrijolada Costeña" data-precio="15500"
+                         data-kcal="320" data-proteina="19" data-perfiles="diabetico">
                     <div class="product-img product-img-4">🥑</div>
-                    <h3>Enfrijolada Costeña</h3>
-                    <p>Tortilla integral bañada en frijol cremoso estilo costeño, queso descremado y salsa verde al ají.</p>
+                    <h3>Flautas frijoladas</h3>
+                    <p>Tortilla integral en tubo, rellena de carne desmechada y ahogao, en salsa de frijol picante.</p>
                     <div class="product-meta">
-                        <span class="meta-tag meta-proteina">19g proteína</span>
+                        <span class="meta-tag meta-proteina">25g proteína</span>
                         <span class="meta-tag meta-calorias">320 kcal</span>
                     </div>
                     <div class="product-footer">
@@ -240,13 +338,14 @@
                 </article>
 
 
-                <article class="product-card" data-id="p5" data-nombre="Chiles Rellenos & Plátano" data-precio="19800">
+                <article class="product-card" data-id="p5" data-nombre="Chiles Rellenos & Plátano" data-precio="19800"
+                         data-kcal="360" data-proteina="26" data-perfiles="diabetico deportista">
                     <div class="product-img product-img-5">🍌</div>
-                    <h3>Chiles Rellenos & Plátano</h3>
-                    <p>Chiles poblanos rellenos de atún colombiano o frijol, acompañados de plátano asado y ensalada.</p>
+                    <h3>Pepino relleno & Plátano</h3>
+                    <p>Dos pepinos rellenos de carne molida picante o atun picante, acompañado de chips de platano.</p>
                     <div class="product-meta">
                         <span class="meta-tag meta-proteina">26g proteína</span>
-                        <span class="meta-tag meta-calorias">360 kcal</span>
+                        <span class="meta-tag meta-calorias">180 kcal</span>
                     </div>
                     <div class="product-footer">
                         <div class="product-price">$19.800</div>
@@ -259,13 +358,14 @@
                     <button class="btn btn-primary btn-block btn-add">Agregar al carrito</button>
                 </article>
 
-                <article class="product-card" data-id="p6" data-nombre="Agua Fresca de Lulo & Limón" data-precio="6500">
+                <article class="product-card" data-id="p6" data-nombre="Agua Fresca de Lulo & Limón" data-precio="6500"
+                         data-kcal="25" data-proteina="0" data-perfiles="diabetico deportista estudiante">
                     <div class="product-img product-img-6">🍹</div>
                     <h3>Agua Fresca de Lulo & Limón</h3>
-                    <p>Bebida hidratante con lulo colombiano, endulzada con stevia. Sin azúcar, 100% natural.</p>
+                    <p>Bebida hidratante con lulo colombiano, endulzada con stevia.</p>
                     <div class="product-meta">
                         <span class="meta-tag meta-proteina">0g azúcar</span>
-                        <span class="meta-tag meta-calorias">25 kcal</span>
+                        <span class="meta-tag meta-calorias">15 kcal</span>
                     </div>
                     <div class="product-footer">
                         <div class="product-price">$6.500</div>
@@ -277,6 +377,171 @@
                     </div>
                     <button class="btn btn-primary btn-block btn-add">Agregar al carrito</button>
                 </article>
+
+                <article class="product-card" data-id="p7" data-nombre="Combo Estudiante" data-precio="17900"
+                         data-kcal="460" data-proteina="42" data-perfiles="estudiante">
+                    <span class="product-badge product-badge--combo">🎒 Combo</span>
+                    <div class="product-img product-img-7">🎒</div>
+                    <h3>Combo Estudiante</h3>
+                    <p>Criollo Wrap + Agua Fresca de Lulo &amp; Limón. Pensado para rendir en clase sin gastar de más.</p>
+                    <div class="product-meta">
+                        <span class="meta-tag meta-proteina">42g proteína</span>
+                        <span class="meta-tag meta-calorias">460 kcal</span>
+                        <span class="meta-tag meta-ahorro">Ahorras $4.100</span>
+                    </div>
+                    <div class="product-footer">
+                        <div class="product-price">$20.500</div>
+                        <div class="qty-row">
+                            <button class="qty-btn qty-minus" aria-label="Quitar">−</button>
+                            <span class="qty-value">0</span>
+                            <button class="qty-btn qty-plus" aria-label="Agregar">+</button>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary btn-block btn-add">Agregar al carrito</button>
+                </article>
+
+                <article class="product-card" data-id="p8" data-nombre="Bowl Arepa Azteca" data-precio="16900"
+                         data-kcal="520" data-proteina="35" data-perfiles="deportista estudiante">
+                    <span class="product-badge product-badge--combo">💪 Post-entreno</span>
+                    <div class="product-img product-img-8">🥗</div>
+                    <h3>Bowl Arepa Azteca</h3>
+                    <p>Arepa asada, frijol negro, pollo grillé, maíz tierno, aguacate y salsa de ají suave. Energía real.</p>
+                    <div class="product-meta">
+                        <span class="meta-tag meta-proteina">35g proteína</span>
+                        <span class="meta-tag meta-calorias">520 kcal</span>
+                    </div>
+                    <div class="product-footer">
+                        <div class="product-price">$16.900</div>
+                        <div class="qty-row">
+                            <button class="qty-btn qty-minus" aria-label="Quitar">−</button>
+                            <span class="qty-value">0</span>
+                            <button class="qty-btn qty-plus" aria-label="Agregar">+</button>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary btn-block btn-add">Agregar al carrito</button>
+                </article>
+
+                <article class="product-card" data-id="p9" data-nombre="Combo Diabético Control Dulce" data-precio="19500"
+                         data-kcal="345" data-proteina="19" data-perfiles="diabetico">
+                    <span class="product-badge product-badge--combo">🩸 Diabético</span>
+                    <div class="product-img product-img-9">🫘</div>
+                    <h3>Combo Diabético Control Dulce</h3>
+                    <p>Flautas frijoladas + Agua Fresca de Lulo &amp; Limón. Índice glicémico bajo, sin azúcar refinada y con la fibra del fríjol.</p>
+                    <div class="product-meta">
+                        <span class="meta-tag meta-proteina">19g proteína</span>
+                        <span class="meta-tag meta-calorias">345 kcal</span>
+                        <span class="meta-tag meta-ahorro">Ahorras $2.500</span>
+                    </div>
+                    <div class="product-footer">
+                        <div class="product-price">$20.500</div>
+                        <div class="qty-row">
+                            <button class="qty-btn qty-minus" aria-label="Quitar">−</button>
+                            <span class="qty-value">0</span>
+                            <button class="qty-btn qty-plus" aria-label="Agregar">+</button>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary btn-block btn-add">Agregar al carrito</button>
+                </article>
+
+                <article class="product-card" data-id="p10" data-nombre="Combo Deportista Recarga Proteica" data-precio="24500"
+                         data-kcal="435" data-proteina="31" data-perfiles="deportista">
+                    <span class="product-badge product-badge--combo">💪 Deportista</span>
+                    <div class="product-img product-img-10">💪</div>
+                    <h3>Combo Deportista Recarga Proteica</h3>
+                    <p>Mole Paisa + Agua Fresca de Lulo &amp; Limón. 31 g de proteína y carbohidratos complejos para recuperar después del entrenamiento.</p>
+                    <div class="product-meta">
+                        <span class="meta-tag meta-proteina">31g proteína</span>
+                        <span class="meta-tag meta-calorias">435 kcal</span>
+                        <span class="meta-tag meta-ahorro">Ahorras $3.000</span>
+                    </div>
+                    <div class="product-footer">
+                        <div class="product-price">$29.500</div>
+                        <div class="qty-row">
+                            <button class="qty-btn qty-minus" aria-label="Quitar">−</button>
+                            <span class="qty-value">0</span>
+                            <button class="qty-btn qty-plus" aria-label="Agregar">+</button>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary btn-block btn-add">Agregar al carrito</button>
+                </article>
+
+                <article class="product-card" data-id="p11" data-nombre="Combo Estudiante Almuerzo Rendidor" data-precio="16500"
+                         data-kcal="425" data-proteina="30" data-perfiles="estudiante">
+                    <span class="product-badge product-badge--combo">🎒 Estudiante</span>
+                    <div class="product-img product-img-11">🎒</div>
+                    <h3>Combo Estudiante Almuerzo Rendidor</h3>
+                    <p>Tacos con Sazón + Agua Fresca de Lulo &amp; Limón. Abundante, económico y sin darte sueño para seguir en clase.</p>
+                    <div class="product-meta">
+                        <span class="meta-tag meta-proteina">30g proteína</span>
+                        <span class="meta-tag meta-calorias">425 kcal</span>
+                        <span class="meta-tag meta-ahorro">Ahorras $2.500</span>
+                    </div>
+                    <div class="product-footer">
+                        <div class="product-price">$16.500</div>
+                        <div class="qty-row">
+                            <button class="qty-btn qty-minus" aria-label="Quitar">−</button>
+                            <span class="qty-value">0</span>
+                            <button class="qty-btn qty-plus" aria-label="Agregar">+</button>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary btn-block btn-add">Agregar al carrito</button>
+                </article>
+
+                <article class="product-card" data-id="p12" data-nombre="Combo Bienestar Come Rico" data-precio="23500"
+                         data-kcal="385" data-proteina="26" data-perfiles="diabetico deportista">
+                    <span class="product-badge product-badge--combo">🥗 Para todos</span>
+                    <div class="product-img product-img-12">🍽️</div>
+                    <h3>Combo Bienestar Come Rico</h3>
+                    <p>Pepinos rellenos &amp; Plátano + Agua Fresca de Lulo &amp; Limón. Sabor mexicano-colombiano completo, liviano y sin culpa.</p>
+                    <div class="product-meta">
+                        <span class="meta-tag meta-proteina">26g proteína</span>
+                        <span class="meta-tag meta-calorias">385 kcal</span>
+                        <span class="meta-tag meta-ahorro">Ahorras $2.800</span>
+                    </div>
+                    <div class="product-footer">
+                        <div class="product-price">$23.500</div>
+                        <div class="qty-row">
+                            <button class="qty-btn qty-minus" aria-label="Quitar">−</button>
+                            <span class="qty-value">0</span>
+                            <button class="qty-btn qty-plus" aria-label="Agregar">+</button>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary btn-block btn-add">Agregar al carrito</button>
+                </article>
+            </div>
+            <p class="filtros-vacio" id="filtrosVacio" hidden>😅 No hay platos con ese filtro. Prueba con <strong>✨ Todos</strong>.</p>
+        </div>
+    </section>
+
+    <!-- ZONA ESTUDIANTE -->
+    <section id="estudiantes" class="section estudiantes">
+        <div class="container">
+            <div class="estudiantes-box">
+                <div class="estudiantes-texto">
+                    <span class="estudiantes-tag">🎒 Zona estudiante</span>
+                    <h2>Estudia rico, come mejor</h2>
+                    <p>
+                        Sabemos que el presupuesto y el tiempo son cortos. Por eso armamos combos
+                        pensados para jornadas largas de clase: llenadores, económicos y que no te dan sueño.
+                    </p>
+                    <ul class="estudiantes-lista">
+                        <li><strong>10% de descuento</strong> con carné estudiantil</li>
+                        <li><strong>Combo diario</strong> desde $17.900</li>
+                        <li><strong>Wi-Fi libre</strong> y espacio para estudiar</li>
+                        <li><strong>2x1</strong> en aguas frescas todos los martes</li>
+                    </ul>
+                    <div class="estudiantes-botones">
+                        <a href="#productos" class="btn btn-primary">Ver combos 🎒</a>
+                        <a href="#contacto" class="btn btn-ghost">Llevar mi carné</a>
+                    </div>
+                </div>
+                <div class="estudiantes-visual" aria-hidden="true">
+                    <div class="estudiantes-emojis">🎒📚🌮☕</div>
+                    <div class="estudiantes-sello">
+                        <strong>Combo diario</strong>
+                        <span>desde $17.900</span>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -542,7 +807,31 @@
         </div>
 
         <div class="cart-footer">
+            <!-- Barra de envío gratis -->
+            <div class="envio-gratis" id="envioGratis" hidden>
+                <p class="envio-gratis__texto" id="envioTexto">Te faltan $0 para envío GRATIS 🛵</p>
+                <div class="envio-gratis__barra">
+                    <div class="envio-gratis__progreso" id="envioProgreso"></div>
+                </div>
+            </div>
+
             <div class="cart-summary" id="cartSummary" hidden>
+                <!-- Resumen nutricional del pedido -->
+                <div class="nutricion" id="nutricion">
+                    <div class="nutricion__item">
+                        <strong id="nutKcal">0</strong>
+                        <span>kcal</span>
+                    </div>
+                    <div class="nutricion__item">
+                        <strong id="nutProt">0</strong>
+                        <span>g de proteína</span>
+                    </div>
+                    <div class="nutricion__item">
+                        <strong id="nutItems">0</strong>
+                        <span>platos</span>
+                    </div>
+                </div>
+
                 <div class="summary-row">
                     <span>Subtotal</span>
                     <span id="subtotal">$0</span>
@@ -556,6 +845,18 @@
                     <strong id="total">$3.000</strong>
                 </div>
             </div>
+            <!-- Datos de entrega (se envían al servidor con el pedido) -->
+            <div class="cart-datos" id="cartDatos">
+                <div class="form-group">
+                    <label for="cartDireccion">Dirección de entrega</label>
+                    <input type="text" id="cartDireccion" placeholder="Ej: Carrera 31 #15A-22, apto 302">
+                </div>
+                <div class="form-group">
+                    <label for="cartTelefono">Teléfono / WhatsApp</label>
+                    <input type="tel" id="cartTelefono" placeholder="+57 300 000 0000">
+                </div>
+            </div>
+
             <button class="btn btn-primary btn-block" id="checkoutBtn" disabled>
                 Finalizar pedido
             </button>

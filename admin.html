@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de administración | Texcuani & CO</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="js/utils.js"  defer></script>
+    <script src="js/admin.js"  defer></script>
+</head>
+<body class="admin-body">
+
+    <header class="admin-header">
+        <a href="/" class="nav-logo">
+            <span class="logo-text">Texcuani</span>
+            <span class="logo-sub">&CO</span>
+        </a>
+        <span class="admin-header__tag">Panel de administración</span>
+        <div class="admin-header__acciones">
+            <a href="/" class="btn btn-ghost">Ver la página</a>
+            <button class="btn btn-secondary hidden" id="salirBtn">Cerrar sesión</button>
+        </div>
+    </header>
+
+    <main class="admin-main">
+
+        <!-- ============ INGRESO ============ -->
+        <section class="admin-login" id="adminLogin">
+            <form class="admin-card admin-card--angosto" id="adminForm">
+                <h1 class="admin-titulo">Entrar al panel</h1>
+                <p class="admin-nota">Solo la cuenta administradora puede ver los pedidos y los mensajes.</p>
+                <div class="form-group">
+                    <label for="adminEmail">Correo del administrador</label>
+                    <input type="email" id="adminEmail" value="admin@texcuani.co" required>
+                </div>
+                <div class="form-group">
+                    <label for="adminPass">Contraseña</label>
+                    <input type="password" id="adminPass" placeholder="Tu contraseña" required>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Ingresar</button>
+                <p class="admin-error hidden" id="adminError"></p>
+            </form>
+        </section>
+
+        <!-- ============ PANEL ============ -->
+        <section class="admin-panel hidden" id="adminPanel">
+
+            <div class="admin-stats">
+                <div class="admin-stat">
+                    <strong id="statPedidos">0</strong>
+                    <span>Pedidos recibidos</span>
+                </div>
+                <div class="admin-stat">
+                    <strong id="statVentas">$0</strong>
+                    <span>Ventas acumuladas</span>
+                </div>
+                <div class="admin-stat">
+                    <strong id="statPendientes">0</strong>
+                    <span>Sin entregar</span>
+                </div>
+                <div class="admin-stat">
+                    <strong id="statMensajes">0</strong>
+                    <span>Mensajes nuevos</span>
+                </div>
+            </div>
+
+            <div class="admin-card">
+                <div class="admin-card__cabecera">
+                    <h2>🧾 Pedidos</h2>
+                    <button class="btn btn-secondary" id="refrescarBtn">Actualizar</button>
+                </div>
+                <div id="pedidosContenedor">
+                    <p class="admin-vacio">Cargando pedidos...</p>
+                </div>
+            </div>
+
+            <div class="admin-card">
+                <div class="admin-card__cabecera">
+                    <h2>💬 Mensajes de contacto</h2>
+                </div>
+                <div id="mensajesContenedor">
+                    <p class="admin-vacio">Cargando mensajes...</p>
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+    <div class="toast" id="toast"></div>
+</body>
+</html>
